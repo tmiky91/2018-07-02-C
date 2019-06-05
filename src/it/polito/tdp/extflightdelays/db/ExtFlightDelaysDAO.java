@@ -103,7 +103,7 @@ public class ExtFlightDelaysDAO {
 	public List<Rotte> getRotte(Map<Integer, Airport> idMap, String numAirlain) {
 		final String sql=	"select f1.ORIGIN_AIRPORT_ID as id1, f1.DESTINATION_AIRPORT_ID as id2, count(*) as peso " + 
 							"from flights as f1 " + 
-							"where f1.ORIGIN_AIRPORT_ID > f1.DESTINATION_AIRPORT_ID " + 
+//							"where f1.ORIGIN_AIRPORT_ID > f1.DESTINATION_AIRPORT_ID " + 
 							"group by id1, id2 " +
 							"having count(distinct f1.AIRLINE_ID)>=?";
 		List<Rotte> rotte = new LinkedList<>();
