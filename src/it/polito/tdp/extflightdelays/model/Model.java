@@ -46,7 +46,9 @@ public class Model {
 			if(edge==null) {
 				Graphs.addEdgeWithVertices(grafo, r.getA1(), r.getA2(), r.getPeso());
 			}else {
-				grafo.setEdgeWeight(edge, r.getPeso());
+				double peso = grafo.getEdgeWeight(edge);
+				double pesoNuovo = (peso+r.getPeso());
+				grafo.setEdgeWeight(edge, pesoNuovo);
 			}
 		}
 		risultato+="Grafo creato! Vertici: "+grafo.vertexSet().size()+" Archi: "+grafo.edgeSet().size()+"\n";
